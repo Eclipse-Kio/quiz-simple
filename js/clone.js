@@ -4,6 +4,25 @@
 // * ---------------- 解决下文中缺少 clone 函数的问题……
 // 在这里写代码……
 
+function clone(src) {
+  if (src === null) {
+    return src;
+  }
+
+  const copy = {}
+
+  for (let key in src) {
+    const value = src[key];
+    if (typeof (value) == "object") {
+      copy[key] = clone(value);
+    } else {
+      copy[key] = value;
+    }
+  }
+
+  return copy;
+}
+
 // * ---------------- 实现的效果：
 
 {

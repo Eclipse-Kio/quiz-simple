@@ -3,13 +3,12 @@
 
 // * ---------------- 请补充……
 
-const getData = async () =>
+const getData = async (): Promise<any> =>
   await fetch('https://jsonplaceholder.typicode.com/todos/').then((response) => response.json());
 
 getData().then((e) => console.log(e));
 
 // * ---------------- TS 的示例
-
 // * 如果你没用过 TS，可以试着快速学习一下
 
 {

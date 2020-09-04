@@ -6,7 +6,22 @@
  * @returns {number} 返回和
  */
 const getSumOfTriple = (arr, start, end) => {
-  // 请实现……
+
+  if (!start) {
+    start = 0;
+  }
+  if (!end) {
+    end = arr.length;
+  }
+
+  let sum = 0;
+
+  for (let i = start + 1; i < end; i++) {
+    if (arr[i] % 3 == 0) {
+      sum += arr[i];
+    }
+  }
+  return sum;
 };
 
 // * ---------------- 实现的效果：
@@ -26,5 +41,9 @@ const getSumOfTriple = (arr, start, end) => {
   // 203, 210, 217, 224, 231, 238, ..., 455, 462, 469, 476, 483, 490, 497
   //      210            231       ...       462            483
 
+  /**
+   * 这里是不是有问题，arr总长度也才143，从200到500应该是0吧？
+   */
   console.log(getSumOfTriple(arr, 200, 500)); // => 4851
+
 }
